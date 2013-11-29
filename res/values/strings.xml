@@ -8,8 +8,8 @@
     
     <!-- Dialog texts -->
     <string name="dialog_ok"> OK </string>
-    <string name="dialog_empty_price">Pris behövs</string>
-    <string name="markZone">Markera minst en zon att resa genom</string>
+    <string name="dialog_empty_price">Ingen zon vald</string>
+    <string name="markZone">Markera minst en zon du tänker resa inom</string>
     
     <!-- Text for detail field -->
     <string name="text_fullprice">Helt</string>
@@ -24,4 +24,5 @@
     <string name="zone_b">Zon B</string>
     <string name="zone_c">Zon C</string>
     <string name="zones">Zon(er)</string>
+    <string name="discount_terms">Du som är under 20 år eller över 65 år har rätt till reducerat pris.</string>
 </resources>

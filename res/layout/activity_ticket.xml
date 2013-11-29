@@ -173,6 +173,13 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+        
+        <TextView 
+            android:textSize="12sp"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/discount_terms"/>
     </LinearLayout>
 
     <Button

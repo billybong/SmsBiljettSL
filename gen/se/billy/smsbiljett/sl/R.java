@@ -63,6 +63,7 @@ public final class R {
          */
         public static final int dialog_ok=0x7f060004;
         public static final int discount=0x7f06000c;
+        public static final int discount_terms=0x7f060013;
         public static final int discount_type=0x7f06000e;
         public static final int markZone=0x7f060006;
         public static final int sl_phone_nr=0x7f060003;
