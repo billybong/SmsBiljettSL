@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMS-Biljett SL</string>
+    <string name="action_info">Info</string>
+    <string name="sl_phone_nr">0767201010</string>
+    <string name="dialog_ok">" Ok "</string>
+    <string name="text_fullprice">Helt</string>
+    <string name="text_code">Kod</string>
+    <string name="text_price">Pris</string>
+    <string name="text_code_caps">KOD</string>
+    <string name="text_price_caps">PRIS</string>
+    <string name="discount">Reducerat</string>
+    <string name="create_sms">Skapa SMS</string>
+    <string name="discount_type">Typ</string>
+    <string name="zone_a">Zon A</string>
+    <string name="zone_b">Zon B</string>
+    <string name="zone_c">Zon C</string>
+    <string name="zones">Zon(er)</string>
+</resources>
