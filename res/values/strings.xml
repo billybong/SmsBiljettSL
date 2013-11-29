@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Generic text -->
     <string name="app_name">SMS-Biljett SL</string>
+    <string name="created_by">"Den här appen utvecklades utav Billy Sjöberg"</string>
     <string name="action_info">Info</string>
     <string name="sl_phone_nr">0767201010</string>
-    <string name="dialog_ok">" Ok "</string>
+    
+    <!-- Dialog texts -->
+    <string name="dialog_ok"> OK </string>
+    <string name="dialog_empty_price">Pris behövs</string>
+    <string name="markZone">Markera minst en zon att resa genom</string>
+    
+    <!-- Text for detail field -->
     <string name="text_fullprice">Helt</string>
     <string name="text_code">Kod</string>
     <string name="text_price">Pris</string>

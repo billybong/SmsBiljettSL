@@ -52,22 +52,31 @@ public final class R {
         public static final int ticket=0x7f080000;
     }
     public static final class string {
-        public static final int action_info=0x7f060001;
+        public static final int action_info=0x7f060002;
+        /**  Generic text 
+         */
         public static final int app_name=0x7f060000;
-        public static final int create_sms=0x7f06000a;
-        public static final int dialog_ok=0x7f060003;
-        public static final int discount=0x7f060009;
-        public static final int discount_type=0x7f06000b;
-        public static final int sl_phone_nr=0x7f060002;
-        public static final int text_code=0x7f060005;
-        public static final int text_code_caps=0x7f060007;
-        public static final int text_fullprice=0x7f060004;
-        public static final int text_price=0x7f060006;
-        public static final int text_price_caps=0x7f060008;
-        public static final int zone_a=0x7f06000c;
-        public static final int zone_b=0x7f06000d;
-        public static final int zone_c=0x7f06000e;
-        public static final int zones=0x7f06000f;
+        public static final int create_sms=0x7f06000d;
+        public static final int created_by=0x7f060001;
+        public static final int dialog_empty_price=0x7f060005;
+        /**  Dialog texts 
+         */
+        public static final int dialog_ok=0x7f060004;
+        public static final int discount=0x7f06000c;
+        public static final int discount_type=0x7f06000e;
+        public static final int markZone=0x7f060006;
+        public static final int sl_phone_nr=0x7f060003;
+        public static final int text_code=0x7f060008;
+        public static final int text_code_caps=0x7f06000a;
+        /**  Text for detail field 
+         */
+        public static final int text_fullprice=0x7f060007;
+        public static final int text_price=0x7f060009;
+        public static final int text_price_caps=0x7f06000b;
+        public static final int zone_a=0x7f06000f;
+        public static final int zone_b=0x7f060010;
+        public static final int zone_c=0x7f060011;
+        public static final int zones=0x7f060012;
     }
     public static final class style {
         /** 

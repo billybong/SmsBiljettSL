@@ -47,7 +47,7 @@ public class TicketActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		super.onOptionsItemSelected(item);
-		showInfoDialog("Info", "Den här appen utvecklades utav Billy Sjöberg");
+		showInfoDialog(getString(R.string.action_info), getString(R.string.created_by));
 		
 		return true;
 	}
@@ -100,7 +100,7 @@ public class TicketActivity extends Activity {
 	public void createSms(View v){
 		
 		if(this.ticket.calculatePrice()==0){
-			showInfoDialog("Pris behövs", "Markera minst en zon att resa genom");
+			showInfoDialog(getString(R.string.dialog_empty_price), getString(R.string.markZone));
 			return;
 		}
 		
