@@ -29,12 +29,17 @@ public class TicketActivity extends Activity {
 		initActivationLink();
 	}
 
+	/**
+	 * Initiates the clickable link to SL's activation page
+	 */
 	private void initActivationLink() {
 		TextView mLink = (TextView) findViewById(R.id.discount_terms);
 		mLink.setMovementMethod(LinkMovementMethod.getInstance());
-		
 	}
 
+	/**
+	 * Initiates no discount as the preselected option
+	 */
 	private void initDiscountSelection() {
 		Button fullPrice = (Button) findViewById(R.id.button_no_discount);
 		fullPrice.setPressed(true);
@@ -48,43 +53,43 @@ public class TicketActivity extends Activity {
 		getMenuInflater().inflate(R.menu.ticket, menu);
 		return true;
 	}
-
-	
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// TODO Auto-generated method stub
 		super.onOptionsItemSelected(item);
-		showInfoDialog(getString(R.string.action_info), getString(R.string.created_by));
-		
+		if(item.getItemId() == R.id.action_info){
+			showInfoDialog(getString(R.string.action_info), getString(R.string.created_by));
+		}
 		return true;
 	}
 
+	/**
+	 * Select the chosen choice and deselect the other...
+	 * @param selected
+	 */
 	public void toggleDiscount(View selected){
-		
 		selected.setPressed(true);
 		selected.setSelected(true);
 		
 		switch (selected.getId()){
 		case R.id.button_discount:
-			deselectOtherButton((Button) findViewById(R.id.button_no_discount));
+			deselectButton((Button) findViewById(R.id.button_no_discount));
 			break;
 		case R.id.button_no_discount:
-			deselectOtherButton((Button) findViewById(R.id.button_discount));
+			deselectButton((Button) findViewById(R.id.button_discount));
 			break;
 		}
 		
 		recalculatePrice(selected);
 	}
 	
-	private void deselectOtherButton(Button button) {
+	private void deselectButton(Button button) {
 		button.setSelected(false);
 		button.setPressed(false);
 		
 	}
 
 	public void recalculatePrice(View v){
-	
 		Button discountButton = (Button) findViewById(R.id.button_discount);
 		this.ticket.setReducedPrice(discountButton.isSelected());
 		
@@ -101,13 +106,12 @@ public class TicketActivity extends Activity {
 		TextView priceText = (TextView) findViewById(R.id.priceText);
 		TextView codeText = (TextView) findViewById(R.id.codeText);
 		
-		priceText.setText(ticket.calculatePrice() + " SEK");
+		priceText.setText(ticket.getPrice() + " SEK");
 		codeText.setText(ticket.getText());
 	}
 	
 	public void createSms(View v){
-		
-		if(this.ticket.calculatePrice()==0){
+		if(this.ticket.getPrice()==0){
 			showInfoDialog(getString(R.string.dialog_empty_price), getString(R.string.markZone));
 			return;
 		}
@@ -118,26 +122,29 @@ public class TicketActivity extends Activity {
 
         startActivity(i);
 	}
-	
+
+	/**
+	 * Provide notification dialog for errors or info
+	 * @param title
+	 * @param infoText
+	 */
 	private void showInfoDialog(String title, String infoText) {
-		// custom dialog
-				final Dialog dialog = new Dialog(this);
-				dialog.setContentView(R.layout.dialog);
-				dialog.setTitle(title);
-		 
-					// set the custom dialog components - text, image and button
-				TextView text = (TextView) dialog.findViewById(R.id.text);
-				text.setText(infoText);
-		 
-				Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-				// if button is clicked, close the custom dialog
-				dialogButton.setOnClickListener(new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						dialog.dismiss();
-					}
-				});
-		 
-				dialog.show();
+		final Dialog dialog = new Dialog(this);
+		dialog.setContentView(R.layout.dialog);
+		dialog.setTitle(title);
+ 
+		TextView text = (TextView) dialog.findViewById(R.id.text);
+		text.setText(infoText);
+ 
+		Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+		// if button is clicked, close the custom dialog
+		dialogButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+ 
+		dialog.show();
 	}
 }

@@ -16,7 +16,7 @@ public class Ticket {
 		.toString();
 	}
 	
-	public int calculatePrice(){
+	public int getPrice(){
 		int nrOfZones = 0;
 		
 		nrOfZones += zoneA?1:0;
@@ -35,7 +35,6 @@ public class Ticket {
 			return 0;
 		}
 	}
-	
 	
 	public boolean isZoneA() {
 		return zoneA;
@@ -61,7 +60,4 @@ public class Ticket {
 	public void setReducedPrice(boolean reducedPrice) {
 		this.reducedPrice = reducedPrice;
 	}
-	
-	
-	
 }

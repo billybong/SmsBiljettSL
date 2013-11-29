@@ -31,7 +31,7 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000c;
+        public static final int action_info=0x7f09000c;
         public static final int button_discount=0x7f090002;
         public static final int button_no_discount=0x7f090001;
         public static final int codeText=0x7f090006;
