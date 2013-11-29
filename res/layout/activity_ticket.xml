@@ -175,6 +175,7 @@
         </LinearLayout>
         
         <TextView 
+            android:id="@+id/discount_terms"
             android:textSize="12sp"
             android:paddingTop="10dp"
             android:layout_width="match_parent"
@@ -188,7 +189,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:onClick="createSms"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
             android:text="@string/create_sms" />    
 </LinearLayout>

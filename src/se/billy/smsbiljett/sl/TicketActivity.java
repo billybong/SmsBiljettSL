@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,13 @@ public class TicketActivity extends Activity {
 		
 		this.ticket = new Ticket();
 		initDiscountSelection();
+		initActivationLink();
+	}
+
+	private void initActivationLink() {
+		TextView mLink = (TextView) findViewById(R.id.discount_terms);
+		mLink.setMovementMethod(LinkMovementMethod.getInstance());
+		
 	}
 
 	private void initDiscountSelection() {
