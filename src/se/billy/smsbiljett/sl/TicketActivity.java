@@ -1,14 +1,22 @@
 package se.billy.smsbiljett.sl;
 
 import se.billy.smsbiljett.sl.domain.Ticket;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.text.Spannable;
 import android.text.method.LinkMovementMethod;
+import android.text.method.MovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -34,8 +42,31 @@ public class TicketActivity extends Activity {
 	 */
 	private void initActivationLink() {
 		TextView mLink = (TextView) findViewById(R.id.discount_terms);
-		mLink.setMovementMethod(LinkMovementMethod.getInstance());
+		MovementMethod movementMethod = new CustomLinkMovementMethod();
+		mLink.setMovementMethod(movementMethod);
 	}
+	
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private class CustomLinkMovementMethod extends LinkMovementMethod{
+
+		@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+		@Override
+		public boolean onTouchEvent(TextView widget, Spannable buffer,
+				MotionEvent event) {
+			
+			// may be null if unknown
+			TelephonyManager tm = (TelephonyManager)getSystemService(TELEPHONY_SERVICE); 
+			String myNumber = tm.getLine1Number() + "";
+			
+			ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE); 
+			ClipData clipData = ClipData.newPlainText("myPhoneNr", myNumber);
+			clipboard.setPrimaryClip(clipData);
+			
+			return super.onTouchEvent(widget, buffer, event);
+		}
+		
+	}
+	
 
 	/**
 	 * Initiates no discount as the preselected option
