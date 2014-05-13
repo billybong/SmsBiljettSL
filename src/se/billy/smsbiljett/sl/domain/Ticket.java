@@ -17,11 +17,7 @@ public class Ticket {
 	}
 	
 	public int getPrice(){
-		int nrOfZones = 0;
-		
-		nrOfZones += zoneA?1:0;
-		nrOfZones += zoneB?1:0;
-		nrOfZones += zoneC?1:0;
+		int nrOfZones = (zoneA?1:0) + (zoneB?1:0) + (zoneC?1:0);
 		
 		switch (nrOfZones)
 		{
